@@ -1,2 +1,9 @@
 # ignore data folder
 data/
+
+# ignore virtualenv
+venv/
+
+# ignore specific files
+/docs/notes.md
+
