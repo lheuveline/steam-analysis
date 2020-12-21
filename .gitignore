@@ -1,6 +1,9 @@
 # ignore data folder
 data/
 
+# ignore logs
+logs/
+
 # ignore virtualenv
 venv/
 
