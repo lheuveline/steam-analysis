@@ -5,17 +5,24 @@ import csv
 import logging
 logging.basicConfig(level=logging.INFO, filename = 'logs/export_logs.logs')
 
+import dotenv
+
 from tqdm import tqdm
 
 class TableExporter:
 
     def __init__(self, **kwargs):
 
-        self.user = kwargs.get('user', 'admin')
-        self.password = kwargs.get('password', "")
-        self.host = kwargs.get('host', "steam-analysis.cvkio2p2ho8s.eu-west-3.rds.amazonaws.com")
-        self.port = kwargs.get('port', 3306)
-        self.dbname = kwargs.get('dbname', "steam_analysis")
+        env_path = kwargs.get('env_path', 'config/.env')
+        dotenv.load_dotenv(
+            dotenv_path = os.path.join(os.getcwd(), env_path)
+        )
+
+        self.user = os.environ.get('DATABASE_USER')
+        self.password = os.environ.get('DATABASE_PASSWORD')
+        self.host = os.environ.get('DATABASE_HOST')
+        self.port = os.environ.get('DATABASE_PORT')
+        self.dbname = os.environ.get('DATABASE_NAME')
 
         self.conn_str = "mysql+pymysql://{}:{}@{}:{}/{}".format(
             self.user, self.password, self.host, self.port, self.dbname

@@ -9,4 +9,4 @@ venv/
 
 # ignore specific files
 /docs/notes.md
-
+/config/.env
