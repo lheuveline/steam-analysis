@@ -2,7 +2,7 @@
 data/
 
 # ignore logs
-logs/
+logs/*.logs
 
 # ignore virtualenv
 venv/
