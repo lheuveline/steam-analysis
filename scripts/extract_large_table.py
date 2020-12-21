@@ -12,7 +12,7 @@ class TableExporter:
     def __init__(self, **kwargs):
 
         self.user = kwargs.get('user', 'admin')
-        self.password = kwargs.get('password', "Respond01")
+        self.password = kwargs.get('password', "")
         self.host = kwargs.get('host', "steam-analysis.cvkio2p2ho8s.eu-west-3.rds.amazonaws.com")
         self.port = kwargs.get('port', 3306)
         self.dbname = kwargs.get('dbname', "steam_analysis")
